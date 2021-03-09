@@ -1,0 +1,354 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block title %} Index Page {% endblock %}
+{% block content %}
+
+    <div id="minimal-bootstrap-carousel" class="carousel slide carousel-fade slider-content-style slider-home-one">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active slide-1"
+                 style="background-image: url({% static 'userlawyer/img/jpg/banner-1-1.jpg' %});">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="box valign-middle">
+                            <div class="content text-center">
+                                <h3 data-animation="animated fadeInUp">Law Expertise.</h3>
+                                <p data-animation="animated fadeInUp">Justice <span class="sep">.</span> Equality <span
+                                        class="sep">.</span> Trust</p>
+                                <a data-animation="animated fadeInDown" href="#consultation" class="thm-btn ">Free
+                                    Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item slide-2"
+                 style="background-image: url({% static 'userlawyer/img/jpg/banner-1-2.jpg' %});">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="box valign-middle">
+                            <div class="content text-center">
+                                <h3 data-animation="animated fadeInUp">Law Expertise.</h3>
+                                <p data-animation="animated fadeInUp">Justice <span class="sep">.</span> Equality <span
+                                        class="sep">.</span> Trust</p>
+                                <a data-animation="animated fadeInDown" href="#consultation" class="thm-btn ">Free Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#minimal-bootstrap-carousel" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <section class="about-style-one sec-pad-top">
+        <img src="{% static 'userlawyer/img/png/about-vector-1-2.png' %}" class="about-vector" alt="Awesome Image"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="video-style-one">
+                        <img src="{% static 'userlawyer/img/jpg/video-1-1.jpg' %}" alt="Awesome Image"/>
+                        <div class="overlay">
+                            <div class="box">
+                                <div class="content">
+                                    <a href="https://www.youtube.com/watch?v=qMOA9f63d8Q" class="video-popup hvr-pulse"><i
+                                            class="fa fa-play"></i></a>
+                                </div><!-- /.content -->
+                            </div><!-- /.box -->
+                        </div><!-- /.overlay -->
+                    </div><!-- /.video-style-one -->
+                </div><!-- /.col-lg-7 -->
+                <div class="col-lg-5 d-flex">
+                    <div class="about-content my-auto">
+                        <h3>Your Justice Is Our Priority</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <img src="{% static 'userlawyer/img/png/sign.png' %}" alt="Awesome Image"/>
+                        <p class="contact-number">Contact :<span>+123 45678 90</span></p><!-- /.contact-number -->
+                    </div><!-- /.about-content -->
+                </div><!-- /.col-lg-5 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.about-style-one -->
+
+    <section class="practice-style-one sec-pad">
+        <img src="{% static 'userlawyer/img/png/practice-area-bg.png' %}" class="practice-area-bg" alt="Awesome Image"/>
+        <div class="container">
+            <div class="sec-title">
+                <h2>Primary Practice Areas</h2>
+                <p>Donec leo augue, vulputate a eros at, sollicitudin elementum dolor. Aliquam <br> consequat mollis
+                    sapien sed ullamcorper.</p>
+            </div><!-- /.sec-title -->
+        </div><!-- /.container -->
+        <div class="container content-container wow fadeInUp" data-wow-duration="1200">
+            {#            <span class="separator verticale"></span>#}
+            {#            <span class="separator horizontal one"></span>#}
+            {#            <span class="separator horizontal two"></span>#}
+            <div class="row">
+                {% for i in practiceList %}
+                    {% if i.status == "active" %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="single-practice-style-one">
+                                <div class="inner-box">
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <i><img src="/media/{{ i.practiceImage }}" height="50px" width="50px"></i>
+                                    </a>
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <h3>{{ i.practiceName }}</h3>
+                                    </a>
+                                    <p>{{ i.practiceDesc|slice:":40" }}<a
+                                            href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        .....</a>
+                                    </p>
+                                </div><!-- /.inner-box -->
+                            </div><!-- /.single-practice-style-one -->
+                        </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+                    {% endif %}
+                {% endfor %}
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.practice-style-one -->
+
+    <section class="fun-fact-style-one sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3><span class="counter">15,890</span>+</h3>
+                        <span class="fact-name">Case Served</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">525</h3>
+                        <span class="fact-name">Advisors</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">274</h3>
+                        <span class="fact-name">Total Clients</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">1248</h3>
+                        <span class="fact-name">Projects</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.fun-fact-style-one -->
+
+    <section class="consulting-form-style-one" id="consultation"
+             style="background: #222 url({% static 'userlawyer/img/jpg/parallax-1-1.jpg' %}) center center no-repeat fixed;">
+        <div class="container">
+            <div class="title-box">
+                <h3>Free Consulting For <br> <span>Our client</span></h3>
+            </div><!-- /.title-box -->
+            <form action="/consultation" class="contact-form row" method="post">
+                {% csrf_token %}
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" name="name" placeholder="your name">
+                </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="email" name="email" placeholder="your email">
+                </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="tel" name="phone" placeholder="your phone">
+                </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" name="address" placeholder="address">
+                </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <textarea name="message" placeholder="Case Description..."></textarea>
+                    <button type="submit">Get In Touch</button>
+                </div><!-- /.col-lg-12 col-md-12 col-sm-12 col-xs-12 -->
+            </form><!-- /.contact-form -->
+        </div><!-- /.container -->
+    </section><!-- /.consulting-form-style-one -->
+
+    <section class="testimonials-style-one sec-pad">
+        <div class="container">
+            <div class="sec-title text-center">
+                <h2>From Our Clients</h2>
+                <p>Donec leo augue, vulputate a eros at, sollicitudin elementum dolor. Aliquam <br>consequat mollis
+                    sapien sed ullamcorper.</p>
+                <p class="tag-line">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque <br>viverra quam
+                    in laoreet quis justo. ivamus varius semper suscipit. <br>Aliquam erat volutpatUt nec magna arcu.
+                    Interdum et”</p>
+            </div><!-- /.sec-title text-center -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-testimonials-style-one wow fadeInLeft" data-wow-delay="400">
+                        <i class="fa fa-quote-right qoute"></i>
+                        <div class="star-box">
+                            <i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i>
+                        </div><!-- /.star-box -->
+                        <p>“Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus.
+                            Vivamus suscipit tortor eget felis”</p>
+                        <h3>Adan Sookram</h3>
+                    </div><!-- /.single-testimonials-style-one -->
+                </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-testimonials-style-one wow fadeInUp" data-wow-delay="800">
+                        <i class="fa fa-quote-right qoute"></i>
+                        <div class="star-box">
+                            <i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i>
+                        </div><!-- /.star-box -->
+                        <p>“Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus.
+                            Vivamus suscipit tortor eget felis”</p>
+                        <h3>Cristen Schweizer</h3>
+                    </div><!-- /.single-testimonials-style-one -->
+                </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-testimonials-style-one wow fadeInRight" data-wow-delay="1200">
+                        <i class="fa fa-quote-right qoute"></i>
+                        <div class="star-box">
+                            <i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i><!--
+                            --><i class="fa fa-star"></i>
+                        </div><!-- /.star-box -->
+                        <p>“Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus.
+                            Vivamus suscipit tortor eget felis”</p>
+                        <h3>Tabatha Alamo</h3>
+                    </div><!-- /.single-testimonials-style-one -->
+                </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.testimonials-style-one -->
+
+    {#    <section class="team-style-one gray-bg sec-pad">#}
+    {#        <div class="container">#}
+    {#            <div class="sec-title text-center">#}
+    {#                <h2>Meet Our Team</h2>#}
+    {#            </div><!-- /.sec-title -->#}
+    {#            <div class="row">#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="500">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-1.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Edmond Campainha</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="1000">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-2.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Sari Breon</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="1500">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-3.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Leo Jennifer</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#            </div><!-- /.row -->#}
+    {#        </div><!-- /.container -->#}
+    {#    </section><!-- /.team-style-one -->#}
+
+    <section class="blog-style-one sec-pad low-gutter">
+        <div class="container">
+            <div class="sec-title text-center">
+                <h2>Recent News</h2>
+                <p>Donec leo augue, vulputate a eros at, sollicitudin elementum dolor. Aliquam <br> consequat mollis
+                    sapien sed ullamcorper.</p>
+            </div><!-- /.sec-title -->
+            <div class="row">
+                {% for i in mediaList %}
+                    {% if i.status == "active" %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="300">
+                            <div class="single-blog-style-one">
+                                <div class="img-box">
+                                    <img src="/media/{{ i.mediaImage }}" alt="Awesome Image" height="300px"/>
+                                    <div class="overlay">
+                                        <div class="box">
+                                            <div class="content">
+                                                <div class="link-box">
+                                                    <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}"><i
+                                                            class="fa fa-link"></i></a>
+                                                </div><!-- /.link-box -->
+                                            </div><!-- /.content -->
+                                        </div><!-- /.box -->
+                                    </div><!-- /.overlay -->
+                                </div><!-- /.img-box -->
+                                <div class="text-box">
+                                    <h3>
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.mediaTitle }}</a>
+                                    </h3>
+                                    <div class="meta-info">
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.byName }}</a>
+                                        {#                                        <span class="sep">/</span>#}
+                                        {#                                        <a href="#">5 Comments</a>#}
+                                        <span class="sep">/</span>
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.related }}</a>
+                                    </div><!-- /.meta-info -->
+                                    <p>{{ i.mediaDesc|slice:":70" }}...</p>
+                                    <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}" class="read-more">Read
+                                        More</a>
+                                </div><!-- /.text-box -->
+                            </div><!-- /.single-blog-style-one -->
+                        </div><!-- /.col-lg-4 -->
+                    {% endif %}
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-style-one -->
+
+    <div
+            class="google-map"
+            id="home-google-map"
+            data-map-lat="22.2759"
+            data-map-lng="70.7780"
+            data-icon-path="images/map-marker.png"
+            data-map-title="Nana Mauva, 150 feet ring road, Rajkot"
+            data-map-zoom="11"
+            data-markers='{
+                "marker-1": [40.712784, -74.005941, "<h4>Main Office</h4><p>Babylon Branch , Lindenhurst, UK</p>"],
+                "marker-2": [40.728157, -74.077642, "<h4>Branch Office</h4> <p>291 Park Ave S, East Meadow, UK</p>"]
+            }' style="width: 86.5%; margin-left: 7%;">
+
+    </div>
+
+    <section class="upper-footer wow fadeInUp" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-2.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

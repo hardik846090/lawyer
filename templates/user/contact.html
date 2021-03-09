@@ -1,0 +1,99 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block title %} Contact Us Page {% endblock %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-5.jpg' %});">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+
+    <section class="contact-info-wrapper sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-contact-info wow fadeInUp" data-wow-duration="500">
+                        <div class="inner-box">
+                            <div class="hexagon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <h3>Phone</h3>
+                            <p>0123 4567 890 <br> 0987 654 1230</p>
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.single-contact-info -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-contact-info wow fadeInUp" data-wow-duration="500">
+                        <div class="inner-box">
+                            <div class="hexagon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <h3>Address</h3>
+                            <p>Nana Mauva circle, Rajkot</p>
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.single-contact-info -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-contact-info wow fadeInUp" data-wow-duration="500">
+                        <div class="inner-box">
+                            <div class="hexagon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>info@yourgmail.com</p>
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.single-contact-info -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.contact-info-wrapper -->
+
+    <section class="contact-page-content sec-pad-bottom">
+        <div class="row" style="margin-left: 2%; height: 80%;">
+            <div class="col-sm-6" style="height: 80%;">
+                <div class="container" style="height: 80%;">
+                    <div class="title-box" style="margin-top: 1px;">
+                        <h3>Have Any <br> <span>Questions?</span></h3>
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                    </div><!-- /.title-box -->
+                    <form action="/contact" class="contact-form" method="post" style="padding: 1px;">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="your name">
+                        <input type="email" name="email" placeholder="your email">
+                        <textarea placeholder="Message here..." name="message" style="height: 80px;"></textarea>
+                        <button type="submit">Send Now</button>
+                    </form>
+                </div><!-- /.container -->
+            </div>
+            <div class="col-sm-5">
+                <div
+                        class="google-map"
+                        id="home-google-map"
+                        data-map-lat="22.2759"
+                        data-map-lng="70.7780"
+                        data-icon-path="images/map-marker.png"
+                        data-map-title="Nana Mauva, 150 feet ring road, Rajkot"
+                        data-map-zoom="11"
+                        data-markers='{
+                    "marker-1": [40.712784, -74.005941, "<h4>Main Office</h4><p>Babylon Branch , Lindenhurst, UK</p>"]
+                }' style="width: 110%; margin-left: 2%; height: 100%;">
+                </div>
+            </div>
+        </div>
+    </section><!-- /.contact-page-content -->
+
+    <section class="upper-footer no-parallax wow fadeInUp" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-4.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

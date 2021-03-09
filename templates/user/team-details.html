@@ -1,0 +1,88 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-5.jpg' %});">
+        <div class="container">
+            <h1>Attorney Details</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+    <section class="team-details-page sec-pad-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="image-box">
+                        <img src="{% static 'userlawyer/img/jpg/single-team-1-1.jpg' %}" alt="Awesome Image"/>
+                    </div><!-- /.image-box -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-8 d-flex">
+                    <div class="team-details-content my-auto">
+                        <h3>Thi Anderton</h3>
+                        <span class="position">Family Lawyer</span>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                            veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim.</p>
+                        <img src="{% static 'userlawyer/img/png/sign-2.png' %}" alt="Awesome Image"/>
+                    </div><!-- /.team-details-content -->
+                </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.team-details-page -->
+    <section class="progress-bar-style-one sec-pad-bottom team-details-progress">
+        <img src="{% static 'userlawyer/img/png/single-team-vector.png' %}" class="single-team-vector"
+             alt="Awesome Image"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 ">
+                    <div class="content-box">
+                        <h3>Donec leo augue, vulputate a eros at, sollicitu- din elementum dolor. Aliquam consequat
+                            mollis sapien sed ullamcorper.</h3>
+                        <div class="progress-box-wrapper">
+                            <div class="single-progress-box">
+                                <h4>Criminal Law</h4>
+                                <div class="progress-outer">
+                                    <div class="progress-inner wow fadeInLeft" data-wow-duration="1000"
+                                         style="width: 90%;"><span class="count-text">90%</span></div>
+                                    <!-- /.progress-inner -->
+                                </div><!-- /.progress-outer -->
+                            </div><!-- /.single-progress-box -->
+                            <div class="single-progress-box">
+                                <h4>Business Law</h4>
+                                <div class="progress-outer">
+                                    <div class="progress-inner wow fadeInLeft" data-wow-duration="1000"
+                                         style="width: 98%;"><span class="count-text">98%</span></div>
+                                    <!-- /.progress-inner -->
+                                </div><!-- /.progress-outer -->
+                            </div><!-- /.single-progress-box -->
+                            <div class="single-progress-box">
+                                <h4>Family Law</h4>
+                                <div class="progress-outer">
+                                    <div class="progress-inner wow fadeInLeft" data-wow-duration="1000"
+                                         style="width: 80%;"><span class="count-text">80%</span></div>
+                                    <!-- /.progress-inner -->
+                                </div><!-- /.progress-outer -->
+                            </div><!-- /.single-progress-box -->
+                        </div><!-- /.progress-box-wrapper -->
+                    </div><!-- /.content-box -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.progress-bar-style-one -->
+
+
+
+    <section class="upper-footer no-parallax wow fadeInUp" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-10.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

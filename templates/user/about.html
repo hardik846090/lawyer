@@ -1,0 +1,223 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block title %} About Page {% endblock %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-1.jpg' %});">
+        <div class="container">
+            <h1>About Us.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+    <section class="about-style-one sec-pad-top home-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="image-box wow fadeInLeft" data-wow-duration="500">
+                        <img src="{% static 'userlawyer/img/jpg/about-1-1.jpg' %}" alt="Awesome Image"/>
+                        <img src="{% static 'userlawyer/img/png/about-vector-1-1.png' %}" class="about-img-box-vector"
+                             alt="Awesome Image"/>
+                    </div><!-- /.image-box -->
+                </div><!-- /.col-lg-7 -->
+                <div class="col-lg-5 d-flex">
+                    <div class="about-content my-auto">
+                        <h3>Your Justice Is Our Priority</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p><b>Name: </b> {{ aboutList.lawyerName }}</p>
+                        <p><b>Experience: </b> {{ aboutList.lawyerExperience }} years</p>
+                        <p><b>Availibility: </b> {{ aboutList.lawyerAvailibility }}</p>
+                        <p><b>VisitingCourts: </b> {{ aboutList.lawyerVisitingCourts }}</p>
+                        <img src="{% static 'userlawyer/img/png/sign.png' %}" alt="Awesome Image"/>
+                        {#                        <a href="#" class="about-btn">Do You Have a Case?</a>#}
+                    </div><!-- /.about-content -->
+                </div><!-- /.col-lg-5 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.about-style-one -->
+
+    <section class="practice-style-one sec-pad">
+        <img src="{% static 'userlawyer/img/png/practice-area-bg.png' %}" class="practice-area-bg" alt="Awesome Image"/>
+        <div class="container">
+            <div class="sec-title">
+                <h2>Primary Practice Areas</h2>
+                <p>Donec leo augue, vulputate a eros at, sollicitudin elementum dolor. Aliquam <br> consequat mollis
+                    sapien sed ullamcorper.</p>
+            </div><!-- /.sec-title -->
+        </div><!-- /.container -->
+        <div class="container content-container wow fadeInUp" data-wow-duration="1200">
+            {#            <span class="separator verticale"></span>#}
+            {#            <span class="separator horizontal one"></span>#}
+            {#            <span class="separator horizontal two"></span>#}
+            <div class="row">
+                {% for i in practiceList %}
+                    {% if i.status == "active" %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="single-practice-style-one">
+                                <div class="inner-box">
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <i><img src="/media/{{ i.practiceImage }}" height="50px" width="50px"></i>
+                                    </a>
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <h3>{{ i.practiceName }}</h3>
+                                    </a>
+                                    <p>{{ i.practiceDesc|slice:":40" }}<a
+                                            href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}"> .....</a>
+                                    </p>
+                                </div><!-- /.inner-box -->
+                            </div><!-- /.single-practice-style-one -->
+                        </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+                    {% endif %}
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.practice-style-one -->
+
+    <section class="featured-content-with-image-style-one">
+        <img src="{% static 'userlawyer/img/png/about-vector-1-2.png' %}" alt="Awesome Image" class="moc-image"/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{% static 'userlawyer/img/jpg/feature-1-1.jpg' %}" class="featured-image"
+                         alt="Awesome Image"/>
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6 d-flex">
+                    <div class="featured-content-box my-auto">
+                        <div class="title-box">
+                            <h2>Why Choose Us</h2>
+                            <div class="line"></div><!-- /.line -->
+                        </div><!-- /.title-box -->
+                        <div class="single-featured-content">
+                            <h3>Focus on law firms</h3>
+                            <p> The Modern Firm was founded to serve attorneys and the legal community; nearly all of
+                                our clients are law firms. We are dedicated to, and have a thorough understanding of,
+                                law firm marketing, technology, and success.</p>
+                        </div><!-- /.single-featured-content -->
+                        <div class="single-featured-content">
+                            <h3>Always Customized</h3>
+                            <p>The Modern Firm websites are always customized to the exact needs of the client. Our
+                                belief is that a law firm’s website should be an accurate reflection of the firm’s
+                                culture, image, philosophy, and message. That can only be done with a customized
+                                design.</p>
+                        </div><!-- /.single-featured-content -->
+                        <div class="single-featured-content">
+                            <h3>Keeping it small</h3>
+                            <p>We only work with small law firms. We are passionate about helping small firms utilize
+                                the web to be nimble and go head-to-head with substantially larger firms. Our intent is
+                                to see our products and services make a real and immediate impact on a small firm's
+                                practice.</p>
+                        </div><!-- /.single-featured-content -->
+                    </div><!-- /.featured-content-box -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.featured-content-with-image-style-one -->
+
+    {#    <section class="team-style-one gray-bg sec-pad">#}
+    {#        <div class="container">#}
+    {#            <div class="sec-title text-center">#}
+    {#                <h2>Meet Our Team</h2>#}
+    {#            </div><!-- /.sec-title -->#}
+    {#            <div class="row">#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="500">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-1.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Edmond Campainha</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="1000">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-2.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Sari Breon</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-team-style-one wow fadeInUp" data-wow-delay="1500">#}
+    {#                        <div class="img-box">#}
+    {#                            <img src="{% static 'userlawyer/img/jpg/team-1-3.jpg' %}" alt="Awesome Image"/>#}
+    {#                        </div><!-- /.img-box -->#}
+    {#                        <div class="text-box">#}
+    {#                            <h3><a href="team-single.html">Leo Jennifer</a></h3>#}
+    {#                            <p>Family Lawyer</p>#}
+    {#                        </div><!-- /.text-box -->#}
+    {#                    </div><!-- /.single-team-style-one -->#}
+    {#                </div><!-- /.col-lg-4 -->#}
+    {#            </div><!-- /.row -->#}
+    {#        </div><!-- /.container -->#}
+    {#    </section><!-- /.team-style-one -->#}
+
+    <section class="about-style-one sec-pad-top text-center">
+        <img src="{% static 'userlawyer/img/png/about-vector-1-2.png' %}" class="about-vector" alt="Awesome Image"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-style-one">
+                        <img src="{% static 'userlawyer/img/jpg/video-1-1.jpg' %}" alt="Awesome Image"/>
+                        <div class="overlay">
+                            <div class="box">
+                                <div class="content">
+                                    <a href="https://www.youtube.com/watch?v=qMOA9f63d8Q" class="video-popup hvr-pulse"><i
+                                            class="fa fa-play"></i></a>
+                                </div><!-- /.content -->
+                            </div><!-- /.box -->
+                        </div><!-- /.overlay -->
+                    </div><!-- /.video-style-one -->
+                </div><!-- /.col-lg-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.about-style-one -->
+
+    <section class="fun-fact-style-one sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3><span class="counter">15,890</span>+</h3>
+                        <span class="fact-name">Case Served</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">525</h3>
+                        <span class="fact-name">Advisors</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">274</h3>
+                        <span class="fact-name">Total Clients</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-fun-fact-style-one">
+                        <h3 class="counter">1248</h3>
+                        <span class="fact-name">Projects</span>
+                    </div><!-- /.single-fun-fact-style-one -->
+                </div><!-- /.col-lg-3 col-md-6 col-sm-12 col-xs-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.fun-fact-style-one -->
+
+    <section class="upper-footer overlay-style-two wow fadeInUp" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-5.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

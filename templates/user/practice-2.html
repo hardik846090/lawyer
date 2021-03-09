@@ -1,0 +1,112 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block title %} Practice Page {% endblock %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-4.jpg' %});">
+        <div class="container">
+            <h1>Practice Area.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+    <section class="practice-style-one sec-pad">
+        <img src="{% static 'userlawyer/img/png/practice-area-bg.png' %}" class="practice-area-bg" alt="Awesome Image"/>
+        <div class="container">
+            <div class="sec-title">
+                <h2>Primary Practice Areas</h2>
+                <p>Donec leo augue, vulputate a eros at, sollicitudin elementum dolor. Aliquam <br> consequat mollis
+                    sapien sed ullamcorper.</p>
+            </div><!-- /.sec-title -->
+        </div><!-- /.container -->
+        <div class="container content-container wow fadeInUp" data-wow-duration="1200">
+            {#            <span class="separator verticale"></span>#}
+            {#            <span class="separator horizontal one"></span>#}
+            {#            <span class="separator horizontal two"></span>#}
+
+            <div class="row">
+                {% for i in practiceList %}
+                    {% if i.status == "active" %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="single-practice-style-one">
+                                <div class="inner-box">
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <i><img src="/media/{{ i.practiceImage }}" height="50px" width="50px"></i>
+                                    </a>
+                                    <a href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}">
+                                        <h3>{{ i.practiceName }}</h3>
+                                    </a>
+                                    <p>{{ i.practiceDesc|slice:":40" }}<a
+                                            href="/user/filterpractice/{{ i.practiceName }}?practiceId={{ i.id }}"> .....</a>
+                                    </p>
+                                </div><!-- /.inner-box -->
+                            </div><!-- /.single-practice-style-one -->
+                        </div><!-- /.col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
+                    {% endif %}
+                {% endfor %}
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+    </section><!-- /.practice-style-one -->
+
+    {#    <section class="pricing-style-one sec-pad gray-bg">#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-pricing-style-one">#}
+    {#                        <i class="fa fa-file-text-o" style="font-size: 72px; margin-bottom: 40px;"></i>#}
+    {#                        <div class="price-box">#}
+    {#                            <span class="amount">$250</span> <span class="time-frame">per month</span>#}
+    {#                        </div><!-- /.price-box -->#}
+    {#                        <h3>Lite</h3>#}
+    {#                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla#}
+    {#                            pariatur. Excep- teur sint occaecat cupidatat non proident, sunt in culpa qui officia#}
+    {#                            deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit#}
+    {#                            voluptatem accusantium.</p>#}
+    {#                        <a href="#" class="price-btn">Get Started</a>#}
+    {#                    </div><!-- /.single-pricing-style-one -->#}
+    {#                </div><!-- /.col-lg-4 col-md-4 col-sm-6 col-xs-12 -->#}
+    {#                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-pricing-style-one popular">#}
+    {#                        <i class="fa fa-balance-scale" style="font-size: 72px; margin-bottom: 40px;"></i>#}
+    {#                        <div class="price-box">#}
+    {#                            <span class="amount">$350</span> <span class="time-frame">per month</span>#}
+    {#                        </div><!-- /.price-box -->#}
+    {#                        <h3>Professional</h3>#}
+    {#                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla#}
+    {#                            pariatur. Excep- teur sint occaecat cupidatat non proident, sunt in culpa qui officia#}
+    {#                            deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit#}
+    {#                            voluptatem accusantium.</p>#}
+    {#                        <a href="#" class="price-btn">Get Started</a>#}
+    {#                    </div><!-- /.single-pricing-style-one -->#}
+    {#                </div><!-- /.col-lg-4 col-md-4 col-sm-6 col-xs-12 -->#}
+    {#                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">#}
+    {#                    <div class="single-pricing-style-one">#}
+    {#                        <i class="fa fa-photo" style="font-size: 72px; margin-bottom: 40px;"></i>#}
+    {#                        <div class="price-box">#}
+    {#                            <span class="amount">$550</span> <span class="time-frame">per month</span>#}
+    {#                        </div><!-- /.price-box -->#}
+    {#                        <h3>Gold</h3>#}
+    {#                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla#}
+    {#                            pariatur. Excep- teur sint occaecat cupidatat non proident, sunt in culpa qui officia#}
+    {#                            deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit#}
+    {#                            voluptatem accusantium.</p>#}
+    {#                        <a href="#" class="price-btn">Get Started</a>#}
+    {#                    </div><!-- /.single-pricing-style-one -->#}
+    {#                </div><!-- /.col-lg-4 col-md-4 col-sm-6 col-xs-12 -->#}
+    {#            </div><!-- /.row -->#}
+    {#        </div><!-- /.container -->#}
+    {#    </section><!-- /.pricing-style-one -->#}
+
+
+    <section class="upper-footer no-parallax wow fadeInUp" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-6.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

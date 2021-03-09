@@ -1,0 +1,244 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-5.jpg' %});">
+        <div class="container">
+            <h1>Recent News</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+    <section class="blog-style-one blog-page-two sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="single-sidebar searh-widget">
+                            <form action="inc/sendemail.php" class="search-form">
+                                <input type="text" name="search" placeholder="search">
+                                <button type="submit"><i class="icofont-search"></i></button>
+                            </form><!-- /.search-form -->
+                        </div><!-- /.single-sidebar searh-widget -->
+                        <div class="single-sidebar archive-widget">
+                            <div class="title-box">
+                                <h3>Archives Widget</h3>
+                                <div class="line"></div><!-- /.line -->
+                            </div><!-- /.title-box -->
+                            <ul class="links-list">
+                                <li><a href="#">September 2015<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">Augest 2015<span class="post-count">(50)</span></a></li>
+                                <li><a href="#">July 2015<span class="post-count">(40)</span></a></li>
+                                <li><a href="#">October 2015<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">January 2014<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">December 2013<span class="post-count">(20)</span></a></li>
+                            </ul>
+                        </div><!-- /.single-sidebar archive-widget -->
+                        <div class="single-sidebar recent-post-widget">
+                            <div class="title-box">
+                                <h3>Tab Widget</h3>
+                                <div class="line"></div><!-- /.line -->
+                            </div><!-- /.title-box -->
+                            <ul class="nav nav-tabs tab-title" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#popular" role="tab" data-toggle="tab">Populer
+                                        Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#upcoming" role="tab" data-toggle="tab">Upcoming
+                                        Events</a>
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="popular">
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">Improve your event promotion online</a></h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="images/recent-post-1-1.jpg" alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">River stumble as Cruzeiro but run argue</a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="images/recent-post-1-1.jpg" alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">The right event mark will bring you the </a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="upcoming">
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="images/recent-post-1-1.jpg" alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">Improve your event promotion online</a></h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="images/recent-post-1-1.jpg" alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">River stumble as Cruzeiro but run argue</a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="images/recent-post-1-1.jpg" alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">The right event mark will bring you the </a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                </div>
+                            </div>
+                        </div><!-- /.single-sidebar recent-post-widget -->
+                        <div class="single-sidebar author-widget">
+                            <img src="images/author-1-1.png" alt="Awesome Image"/>
+                            <h3>Exercitation photo booth stumptown tote bag Banksy, elit small batch free- gan sed.
+                                Craft beer elit seitan.</h3>
+                        </div><!-- /.single-sidebar author-widget -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-8">
+                    <div class="single-blog-style-one">
+                        <div class="img-box">
+                            <img src="images/blog-3-1.jpg" alt="Awesome Image"/>
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <div class="link-box">
+                                            <a href="blog-details.html"><i class="icofont-link"></i></a>
+                                        </div><!-- /.link-box -->
+                                    </div><!-- /.content -->
+                                </div><!-- /.box -->
+                            </div><!-- /.overlay -->
+                        </div><!-- /.img-box -->
+                        <div class="text-box">
+                            <h3><a href="blog-details.html">Who's responsible for this request?</a></h3>
+                            <div class="meta-info">
+                                <a href="#">By Admin</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#">5 Comments</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#"> Wordpress themes</a>
+                            </div><!-- /.meta-info -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.</p>
+                            <a href="blog-details.html" class="read-more">Read More</a>
+                        </div><!-- /.text-box -->
+                    </div><!-- /.single-blog-style-one -->
+                    <div class="single-blog-style-one">
+                        <div class="video-box">
+                            <img src="images/blog-3-2.jpg" alt="Awesome Image"/>
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <div class="link-box">
+                                            <a href="https://www.youtube.com/watch?v=uTDjVVBV_FQ"
+                                               class="video-popup hvr-pulse"><i class="icofont-play-alt-1"></i></a>
+                                        </div><!-- /.link-box -->
+                                    </div><!-- /.content -->
+                                </div><!-- /.box -->
+                            </div><!-- /.overlay -->
+                        </div><!-- /.img-box -->
+                        <div class="text-box">
+                            <h3><a href="blog-details.html">We need a plan can you slack it to me?</a></h3>
+                            <div class="meta-info">
+                                <a href="#">By Admin</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#">5 Comments</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#"> Wordpress themes</a>
+                            </div><!-- /.meta-info -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.</p>
+                            <a href="blog-details.html" class="read-more">Read More</a>
+                        </div><!-- /.text-box -->
+                    </div><!-- /.single-blog-style-one -->
+                    <div class="single-blog-style-one">
+                        <div class="blog-post-carousel owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="img-box">
+                                    <img src="images/blog-3-3.jpg" alt="Awesome Image"/>
+                                </div><!-- /.img-box -->
+                            </div><!-- /.item -->
+                            <div class="item">
+                                <div class="img-box">
+                                    <img src="images/blog-3-1.jpg" alt="Awesome Image"/>
+                                </div><!-- /.img-box -->
+                            </div><!-- /.item -->
+                            <div class="item">
+                                <div class="img-box">
+                                    <img src="images/blog-3-2.jpg" alt="Awesome Image"/>
+                                </div><!-- /.img-box -->
+                            </div><!-- /.item -->
+                        </div><!-- /.blog-post-carousel owl-carousel owl-theme -->
+
+                        <div class="text-box">
+                            <h3><a href="blog-details.html">Gain traction are there any in the kitchen?</a></h3>
+                            <div class="meta-info">
+                                <a href="#">By Admin</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#">5 Comments</a><!--
+                                --><span class="sep">/</span><!--
+                                --><a href="#"> Wordpress themes</a>
+                            </div><!-- /.meta-info -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.</p>
+                            <a href="blog-details.html" class="read-more">Read More</a>
+                        </div><!-- /.text-box -->
+                    </div><!-- /.single-blog-style-one -->
+                    <div class="post-pagination text-center">
+                        <a href="#"><span><i class="icofont-long-arrow-left"></i></span></a>
+                        <a class="active" href="#"><span>1</span></a>
+                        <a href="#"><span>2</span></a>
+                        <a href="#"><span>3</span></a>
+                        <a href="#"><span>4</span></a>
+                        <a href="#"><span><i class="icofont-long-arrow-right"></i></span></a>
+                    </div><!-- /.post-pagination -->
+                </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-style-one -->
+
+    <section class="upper-footer wow fadeInUp overlay-style-two" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-14.jpg' %});">
+        <div class="container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

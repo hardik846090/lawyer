@@ -1,0 +1,111 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block content %}
+    {% for i in practiceList %}
+        <section class="inner-banner-style-one text-center"
+                 style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-2.jpg' %});">
+            <div class="container">
+
+                <h1>{{ i.practiceName }}</h1>
+
+                <p>{{ i.practiceDesc }}</p>
+            </div><!-- /.container -->
+        </section><!-- /.inner-banner-style-one -->
+
+
+        <section class="case-study-page sec-pad-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="case-study-content">
+                            <h3>Trial Summary</h3>
+                            <p>Aenean vulputate odio mauris, suscipit iaculis diam sodales ut. Pellentesque vitae massa
+                                vitae massa tempor auctor in a ante. Fusce id urna posuere, facilisis turpis non,
+                                imperdiet
+                                ligula. Ut rutrum euismod orci sit amet porttitor. Quisque nisl massa, rhoncus interdum
+                                consectetur vitae, pellentesque non neque. Vivamus et semper velit. Lorem ipsum dolor
+                                sit
+                                amet, consectetur adipiscing elit. Nam ornare purus in turpis pharetra vestibulum.</p>
+                            <p>Aenean vulputate odio mauris, suscipit iaculis diam sodales ut. Pellentesque vitae massa
+                                vitae massa tempor auctor in a ante. Fusce id urna posuere, facilisis turpis non,
+                                imperdiet
+                                ligula. Ut rutrum euismod orci sit amet porttitor. Quisque nisl massa, rhoncus interdum
+                                consectetur vitae, pellentesque non neque. Vivamus et semper velit. Lorem ipsum dolor
+                                sit
+                                amet, consectetur adipiscing elit. Nam ornare purus in turpis pharetra vestibulum.</p>
+                        </div><!-- /.case-study-content -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="case-study-content">
+                            <h3>Process</h3>
+                            <p>Sed tristique orci quis libero tristique, ut porttitor nibh maximus. Nam ullamcorper leo
+                                eu
+                                ante tristique, id efficitur risus euismod. Curabitur ac velit a turpis eleifend
+                                fermentum
+                                vitae vel dui. In sodales sapien vitae posuere volutpat.</p>
+                            <p>Vestibulum ac sapien porttitor, imperdiet risus non, accumsan orci. Morbi vitae erat
+                                porttitor, porta ipsum in, tincidunt ex. Vestibulum id lectus nec turpis malesuada
+                                ornare.
+                                Mauris porta ante at turpis rutrum, quis suscipit velit venenatis. Nulla cursus nibh id
+                                porta lacinia.</p>
+                            <p>Duis interdum nisi sed velit pulvinar feugiat. Quisque ut est vulputate, sollicitudin
+                                sapien
+                                id, sodales leo.</p>
+                        </div><!-- /.case-study-content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="case-study-content">
+                            <h3>Final Result</h3>
+                            <p>Aenean vulputate odio mauris, suscipit iaculis diam sodales ut. Pellentesque vitae massa
+                                vitae massa tempor auctor in a ante. Fusce id urna posuere, facilisis turpis non,
+                                imperdiet
+                                ligula. Ut rutrum euismod orci sit amet porttitor. Quisque nisl massa, rhoncus interdum
+                                consectetur vitae, pellentesque non neque. Vivamus et semper velit. Lorem ipsum dolor
+                                sit
+                                amet, consectetur adipiscing elit. Nam ornare purus in turpis pharetra vestibulum.</p>
+                            <p>Aenean eleifend, quam quis ullamcorper venenatis, lorem neque venenatis mauris, et
+                                aliquet
+                                risus quam quis urna. Praesent vitae elit ut mauris semper ultricies sed eu nisi. Etiam
+                                dictum orci in enim pretium, et egestas odio consequat. Aliquam erat volutpat. Nam
+                                venenatis, lectus quis tristique efficitur, quam eros interdum nunc, sit amet commodo
+                                lacus
+                                eros at ligula. Maecenas vel nunc gravida, pharetra turpis vel, placerat neque. Vivamus
+                                varius tellus at ante posuere.</p>
+                        </div><!-- /.case-study-content -->
+                    </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+
+                <div class="img-box wow fadeInUp" data-wow-duration="500">
+                    <img src="/media/{{ i.practiceImage }}" alt="Awesome Image"/>
+                </div><!-- /.img-box -->
+                <div class="fun-fact-style-one fun-fact-wrapper pt0">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="single-fun-fact-style-one">
+                                <h3><span class="counter">15,890</span>+</h3>
+                                <span class="fact-name">Case Served</span>
+                            </div><!-- /.single-fun-fact-style-one -->
+                        </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="single-fun-fact-style-one">
+                                <h3 class="counter">525</h3>
+                                <span class="fact-name">Advisors</span>
+                            </div><!-- /.single-fun-fact-style-one -->
+                        </div><!-- /.col-lg-6 col-md-6 col-sm-12 col-xs-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.fun-fact-wrapper -->
+            </div><!-- /.container -->
+        </section><!-- /.case-study-page -->
+
+
+        <section class="upper-footer overlay-style-two wow fadeInUp" data-wow-delay="600"
+                 style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-13.jpg' %});">
+            <div class="container">
+                <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+            </div><!-- /.container -->
+        </section><!-- /.upper-footer -->
+    {% endfor %}
+
+{% endblock %}

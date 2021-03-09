@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<form action="/user/insertcomment" method="post">
+    {% csrf_token %}
+    <input hidden name="blogId" value="{{ blogId }}">
+    <label for="fname">Name : </label><br>
+    <input type="text" id="fname" name="name"><br>
+    <label for="fname">Email : </label><br>
+    <input type="email" id="fname" name="email"><br>
+    <label for="fname">Phone : </label><br>
+    <input type="tel" id="fname" name="phone"><br>
+    <label for="fname">Message : </label><br>
+    <input type="text" id="fname" name="commentDesc"><br>
+    <h2>Star Rating</h2>
+    <div class="stars">
+        <input class="star star-5" id="star-5" type="radio" name="commentRating" value="1"/>
+        <label class="star star-5" for="star-5"></label>
+        <input class="star star-4" id="star-4" type="radio" name="commentRating" value="2"/>
+        <label class="star star-4" for="star-4"></label>
+        <input class="star star-3" id="star-3" type="radio" name="commentRating" value="3"/>
+        <label class="star star-3" for="star-3"></label>
+        <input class="star star-2" id="star-2" type="radio" name="commentRating" value="4"/>
+        <label class="star star-2" for="star-2"></label>
+        <input class="star star-1" id="star-1" type="radio" name="commentRating" value="5"/>
+        <label class="star star-1" for="star-1"></label>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

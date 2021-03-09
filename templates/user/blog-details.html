@@ -1,0 +1,240 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% block title %} {{ media }} {% endblock %}
+{% block content %}
+
+    <section class="inner-banner-style-one text-center"
+             style="background-image: url({% static 'userlawyer/img/jpg/inner-banner-1-5.jpg' %});">
+        <div class="container">
+            <h1>News Details</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner-style-one -->
+
+    <section class="blog-style-one blog-page-two blog-page-single sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    {% for i in mediaList %}
+                        {% if i.status == "active" %}
+                            <div class="single-blog-style-one">
+                                <div class="img-box">
+                                    <img src="/media/{{ i.mediaImage }}" alt="Awesome Image" height="400px"
+                                         width="400px"/>
+                                </div><!-- /.img-box -->
+                                <div class="text-box">
+                                    <h3>
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.mediaTitle }}</a>
+                                    </h3>
+                                    <div class="meta-info">
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.byName }}</a>
+                                        {#                                        <span class="sep">/</span>#}
+                                        {#                                        <a href="#">5 Comments</a>#}
+                                        <span class="sep">/</span>
+                                        <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.related }}</a>
+                                    </div><!-- /.meta-info -->
+                                    <p>{{ i.mediaDesc }}</p>
+                                    <div class="qoute-box">
+                                        <h3>Teena Venanda</h3>
+                                        <span>CEO/Founder</span>
+                                        <p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                            labore et
+                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco
+                                            laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                        {#                                    <i class="fa fa-quote-right qoute"></i>#}
+                                    </div><!-- /.qoute-box -->
+                                </div><!-- /.text-box -->
+                            </div><!-- /.single-blog-style-one -->
+                        {% endif %}
+                    {% endfor %}
+                    <div class="recent-post-block">
+                        <div class="title-box">
+                            <h3>Related Post</h3>
+                        </div><!-- /.title-box -->
+                        <div class="row">
+                            {% for i in otherMediaList %}
+                                {% if i.status == "active" %}
+                                    <div class="col-md-6">
+                                        <div class="single-blog-style-one">
+                                            <div class="img-box">
+                                                <img src="/media/{{ i.mediaImage }}"
+                                                     alt="Awesome Image"/>
+                                                <div class="overlay">
+                                                    <div class="box">
+                                                        <div class="content">
+                                                            <div class="link-box">
+                                                                <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}"><i
+                                                                        class="fa fa-link"></i></a>
+                                                            </div><!-- /.link-box -->
+                                                        </div><!-- /.content -->
+                                                    </div><!-- /.box -->
+                                                </div><!-- /.overlay -->
+                                            </div><!-- /.img-box -->
+                                            <div class="text-box">
+                                                <h3>
+                                                    <a href="/user/filtermedia/{{ i.mediaTitle }}?mediaId={{ i.id }}">{{ i.mediaTitle }}</a>
+                                                </h3>
+                                            </div><!-- /.text-box -->
+                                        </div><!-- /.single-blog-style-one -->
+                                    </div><!-- /.col-md-6 -->
+                                {% endif %}
+                            {% endfor %}
+                        </div><!-- /.row -->
+                    </div><!-- /.recent-post-block -->
+                    <div class="post-author-box">
+                        <div class="img-box">
+                            <img src="{% static 'userlawyer/img/jpg/author-2-1.jpg' %}" alt="Awesome Image"/>
+                        </div><!-- /.img-box -->
+                        <div class="text-box">
+                            <h3>Admin says</h3>
+                            <span>APRIL 5, 2016 AT 12:45 AM</span>
+                            <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet
+                                latcus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque
+                                tempor dolor sit amet tellus malesuada.</p>
+                        </div><!-- /.text-box -->
+                    </div><!-- /.post-author-box -->
+                    {#                    <form action="/user/insertcomment" class="contact-form comment-form" method="post">#}
+                    {#                        {% csrf_token %}#}
+                    {#                        <input hidden name="mediaId" value="{{ mediaId }}">#}
+                    {#                        <div class="row">#}
+                    {#                            <div class="col-lg-4">#}
+                    {#                                <input type="text" name="name" placeholder="your name">#}
+                    {#                            </div><!-- /.col-lg-4 -->#}
+                    {#                            <div class="col-lg-4">#}
+                    {#                                <input type="email" name="email" placeholder="your email">#}
+                    {#                            </div><!-- /.col-lg-4 -->#}
+                    {#                            <div class="col-lg-4">#}
+                    {#                                <input type="tel" name="phone" placeholder="your mobile number">#}
+                    {#                            </div><!-- /.col-lg-4 -->#}
+                    {#                            <div class="col-lg-12">#}
+                    {#                                <textarea placeholder="Message here..." name="commentDesc"></textarea>#}
+                    {#                                <button type="submit">Send your Comment</button>#}
+                    {#                            </div><!-- /.col-lg-12 -->#}
+                    {#                        </div><!-- /.row -->#}
+                    {#                    </form>#}
+                </div><!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="sidebar sidebar-right">
+                        <div class="single-sidebar searh-widget">
+                            <form action="inc/sendemail.php" class="search-form">
+                                <input type="text" name="search" placeholder="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form><!-- /.search-form -->
+                        </div><!-- /.single-sidebar searh-widget -->
+                        <div class="single-sidebar archive-widget">
+                            <div class="title-box">
+                                <h3>Archives Widget</h3>
+                                <div class="line"></div><!-- /.line -->
+                            </div><!-- /.title-box -->
+                            <ul class="links-list">
+                                <li><a href="#">September 2015<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">Augest 2015<span class="post-count">(50)</span></a></li>
+                                <li><a href="#">July 2015<span class="post-count">(40)</span></a></li>
+                                <li><a href="#">October 2015<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">January 2014<span class="post-count">(20)</span></a></li>
+                                <li><a href="#">December 2013<span class="post-count">(20)</span></a></li>
+                            </ul>
+                        </div><!-- /.single-sidebar archive-widget -->
+                        <div class="single-sidebar recent-post-widget">
+                            <div class="title-box">
+                                <h3>Tab Widget</h3>
+                                <div class="line"></div><!-- /.line -->
+                            </div><!-- /.title-box -->
+                            <ul class="nav nav-tabs tab-title" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#popular" role="tab" data-toggle="tab">Populer
+                                        Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#upcoming" role="tab" data-toggle="tab">Upcoming
+                                        Events</a>
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="popular">
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">Improve your event promotion online</a></h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">River stumble as Cruzeiro but run argue</a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">The right event mark will bring you the </a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="upcoming">
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">Improve your event promotion online</a></h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">River stumble as Cruzeiro but run argue</a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                    <div class="single-recent-post">
+                                        <div class="img-box">
+                                            <img src="{% static 'userlawyer/img/jpg/recent-post-1-1.jpg' %}"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.img-box -->
+                                        <div class="text-box">
+                                            <h3><a href="blog-details.html">The right event mark will bring you the </a>
+                                            </h3>
+                                        </div><!-- /.text-box -->
+                                    </div><!-- /.single-recent-post -->
+                                </div>
+                            </div>
+                        </div><!-- /.single-sidebar recent-post-widget -->
+                        <div class="single-sidebar author-widget">
+                            <img src="{% static 'userlawyer/img/png/author-1-1.png' %}" alt="Awesome Image"/>
+                            <h3>Exercitation photo booth stumptown tote bag Banksy, elit small batch free- gan sed.
+                                Craft beer elit seitan.</h3>
+                        </div><!-- /.single-sidebar author-widget -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-style-one -->
+
+    <section class="upper-footer wow fadeInUp overlay-style-two" data-wow-delay="600"
+             style="background-image: url({% static 'userlawyer/img/jpg/parallax-1-15.jpg' %});">
+        <div class=" container">
+            <h3>Every Person Who Walks Through Our Door <br>Is Important To Us.</h3>
+        </div><!-- /.container -->
+    </section><!-- /.upper-footer -->
+
+{% endblock %}

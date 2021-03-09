@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'userlawyer/img/png/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'userlawyer/img/png/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'userlawyer/img/png/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'userlawyer/img/png/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'userlawyer/img/png/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'userlawyer/img/png/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'userlawyer/img/png/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'userlawyer/img/png/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'userlawyer/img/png/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'userlawyer/img/png/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'userlawyer/img/png/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'userlawyer/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'userlawyer/img/png/favicon-16x16.png' %}">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'userlawyer/img/png/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- depdency stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700,700i%7COpen+Sans:400,400i,700,700i"
+          rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'userlawyer/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'userlawyer/css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'userlawyer/css/icofont.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'userlawyer/css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'userlawyer/css/hover-min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {#    <script src='https://kit.fontawesome.com/a076d05399.js'></script>#}
+
+    <!-- main template stylesheet -->
+    <link rel="stylesheet" href="{% static 'userlawyer/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'userlawyer/css/responsive.css' %}">
+</head>
+<body>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div class="page-wrapper">
+
+    {#    <div class="preloader"></div><!-- /.preloader -->#}
+    <header class="site-header">
+        <div class="container clearfix" id="google_translate_element">
+            <div class="logo float-left">
+                <a href="/"><img src="{% static 'userlawyer/img/png/logo-1-1.png' %}" alt="Awesome Image"/></a>
+            </div><!-- /.logo float-left -->
+            <div class="header-right-content float-right">
+                <div class="single-header-right contact-box">
+                    <span>+123 45678 90</span>
+                    <p>Win Your Case Today.</p>
+                </div><!-- /.single-header-right -->
+                <div class="single-header-right social-box">
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://feeder.co/login" target="_blank">
+                        <i class="fa fa-rss"></i>
+                        <span>Rss</span>
+                    </a>
+                    <a href="https://www.skype.com/en/" target="_blank">
+                        <i class="fa fa-skype"></i>
+                        <span>Skype</span>
+                    </a>
+                </div><!-- /.single-header-right -->
+
+                <div class="single-header-right sidenav-btn-box">
+                    <a href="#" class="side-nav-open side-nav-opener">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </a>
+                </div><!-- /.single-header-right -->
+            </div><!-- /.header-right-content float-right -->
+        </div><!-- /.container -->
+
+    </header><!-- /.site-header -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box clearfix">
+                <button class="menu-toggler" data-target="#main-nav-bar">
+                    <span class="icofont-navigation-menu"></span>
+                </button>
+            </div><!-- /.logo-box -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation" id="main-nav-bar">
+                <ul class=" navigation-box">
+                    <li class=" current">
+                        <a href="/">Home</a>
+                        {#                        <ul class="sub-menu">#}
+                        {#                            <li><a href="/">Home One</a></li>#}
+                        {#                            <li><a href="index2.html">Home Two</a></li>#}
+                        {#                        </ul><!-- /.sub-menu -->#}
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/practice2">Practice Area</a>
+                        {#                        <ul class="sub-menu">#}
+                        {#                            <li><a href="/practice">Practice One</a></li>#}
+                        {#                            <li><a href="/practice2">Practice Area</a></li>#}
+                        {#                            <li><a href="/practicedetails">Single Practice</a></li>#}
+                        {#                        </ul><!-- /.sub-menu -->#}
+                    </li>
+                    <li>
+                        <a href="/cases">Cases</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Media</a>
+                        {#                        <ul class="sub-menu ">#}
+                        {#                            <li><a href="/blog">Media Page</a></li>#}
+                        {#                            <li><a href="/blogleft">Blog Left</a></li>#}
+                        {#                            <li><a href="/blogdetails">Media Details</a></li>#}
+                        {#                        </ul><!-- /.sub-menu -->#}
+                    </li>
+                    <li>
+                        <a href="/team">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="/team">Attorneys</a></li>
+                            <li><a href="/teamdetails">Attorney Details</a></li>
+                            <li><a href="/faq">FAQ Page</a></li>
+                            <li><a href="/testimonials">Testimonials</a></li>
+                        </ul><!-- /.sub-menu -->
+                    </li>
+                    <li>
+                        <a href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            <div class="right-side-box">
+                <a href="/#consultation" class="consulting-btn">Free Consultation <i
+                        class="fa fa-long-arrow-right"></i></a>
+            </div>
+            <!-- /.right-side-box -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="site-footer">
+        <div class="container clearfix">
+            <div class="left-copy float-left">
+                <p>Copyright © 2020 by All rights reserved. </p>
+            </div><!-- /.left-copy float-left -->
+            <div class="right-social float-right">
+                <a href="https://accounts.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a><!--
+                --><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a><!--
+                --><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+            </div><!-- /.right-social float-right -->
+        </div><!-- /.container -->
+    </footer><!-- /.site-footer -->
+
+</div><!-- /.page-wrapper -->
+
+<section class="hidden-sidebar side-navigation">
+    <span class="close-button side-navigation-close-btn fa fa-close"></span><!-- /.close-button -->
+    <div class="sidebar-content">
+        <h3>LawGuard Lawyer<br/> & Attorney <br/> Html Template</h3>
+        <p>We plainly comprehend that you need not to lose, but rather to gain more cash over your time of work with us.
+            That is the reason we dismiss all high-chance undertakings, that may prompt a quick heap of money out of the
+            blue however to a primary capital's misfortune the second time.</p>
+        <p class="contact-info">Inquiry@lawgaurd.com <br/> 2800 256 508</p><!-- /.contact-info -->
+        <div class="social">
+            <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a><!--
+            --><a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a><!--
+            --><a href="https://www.youtube.com/" class="fa fa-youtube" target="_blank"></a><!--
+            --><a href="https://www.pinterest.com/" class="fa fa-pinterest" target="_blank"></a>
+        </div><!-- /.social -->
+    </div><!-- /.sidebar-content -->
+</section><!-- /.hidden-sidebar -->
+
+
+{#<a href="#" data-target="html" class="scroll-to-target scroll-to-top">#}
+{#    <i class="fa fa-arrow-up"></i></a>#}
+<!-- /.scroll-to-top -->
+
+
+<script src="{% static 'userlawyer/js/jquery.js' %}"></script>
+<script src="{% static 'userlawyer/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'userlawyer/js/wow.js' %}"></script>
+<script src="{% static 'userlawyer/js/waypoints.min.js' %}"></script>
+<script src="{% static 'userlawyer/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'userlawyer/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'userlawyer/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'userlawyer/js/theme.js' %}"></script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
+<!-- google map helper -->
+<script src="{% static 'userlawyer/js/gmaps.js' %}"></script>
+<script src="{% static 'userlawyer/js/map-helper.js' %}"></script>
+
+
+<!--  Bot Integrations  -->
+
+<script type="text/javascript">
+    (function (d, m) {
+        var kommunicateSettings =
+            {"appId": "3241e53027a7b26b0f157736f21d839a5", "popupWidget": true, "automaticChatOpenOnNavigation": true};
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0];
+        h.appendChild(s);
+        window.kommunicate = m;
+        m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+
+</body>
+</html>

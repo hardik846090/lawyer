@@ -1,0 +1,150 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block title %} Add Practices {% endblock %}
+{% block content %}
+
+
+
+    <div class="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="float-right page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Drixo</a></li>
+                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                            <li class="breadcrumb-item active">Datatable</li>
+                        </ol>
+                    </div>
+                    {% if editPractice %}
+                        <h5 class="page-title">Edit Practice</h5>
+                    {% else %}
+                        <h5 class="page-title">Add Practice</h5>
+                    {% endif %}
+                </div>
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <p class="text-muted font-14 m-b-20">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                            {% if editPractice %}
+                                <form action="/admin/updatepractice" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="text" value="{{ editPractice.id }}" hidden name="id">
+
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Upload Practice Image<span
+                                                class="text-danger">*</span></label>
+                                        <input type="file" name="practiceImage" id="file" parsley-trigger="change"
+                                               onchange="loadFile(event)"
+                                               placeholder="Enter Image" class="form-control" id="emailAddress"
+                                               style="display: none;" value="{{ editPractice.practiceImage }}">
+                                        <p><img id="output" style="width: 100%"
+                                                src="/media/{{ editPractice.practiceImage }}"/>
+                                        </p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Practice Name<span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" name="practiceName" parsley-trigger="change" required
+                                               placeholder="Enter Practice Name" class="form-control" id="emailAddress"
+                                               value="{{ editPractice.practiceName }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Practice Description<span class="text-danger">*</span></label>
+                                        <input type="text" name="practiceDesc" parsley-trigger="change" required
+                                               placeholder="Enter Practice Description" class="form-control"
+                                               id="emailAddress"
+                                               value="{{ editPractice.practiceDesc }}">
+                                    </div>
+
+
+                                    <div class="form-group text-right m-b-0">
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                            Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            Cancel
+                                        </button>
+                                    </div>
+
+                                </form>
+
+                            {% else %}
+                                <form action="/admin/insertpractice" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Upload Practice Image<span
+                                                class="text-danger">*</span></label>
+                                        <input type="file" name="practiceImage" parsley-trigger="change"
+                                               accept="image/*"
+                                               id="file" onchange="loadFile(event)"
+                                               placeholder="Enter link" class="form-control" id="emailAddress">
+                                        <p><img id="output" style="width: 100%"
+                                                {% if practiceImage %}src="{{ practiceImage }}"{% endif %}/></p>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Practice Name<span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" name="practiceName" parsley-trigger="change"
+                                               placeholder="Enter Practice Name" class="form-control" id="emailAddress"
+                                               {% if practiceName %}value="{{ practiceName }}"{% endif %}>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Practice Description<span class="text-danger">*</span></label>
+                                        <input type="text" name="practiceDesc" parsley-trigger="change"
+                                               placeholder="Enter Practice Description" class="form-control"
+                                               id="emailAddress"
+                                               {% if practiceDesc %}value="{{ practiceDesc }}"{% endif %}>
+                                    </div>
+
+
+                                    <div class="form-group text-right m-b-0">
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                            Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            Cancel
+                                        </button>
+                                    </div>
+
+                                </form>
+                            {% endif %}
+                            <br>
+
+                        </div>
+                    </div>
+                </div><!-- end col --></div><!-- end row --></div><!-- container fluid --></div>
+    <!-- Page content Wrapper -->
+
+
+    <script src="{% static 'solkStatic/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/dataTables.bootstrap4.min.js' %}"></script><!-- Buttons examples -->
+    <script src="{% static 'solkStatic/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/jszip.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/pdfmake.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/vfs_fonts.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.colVis.min.js' %}"></script><!-- Responsive examples -->
+    <script src="{% static 'solkStatic/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/responsive.bootstrap4.min.js' %}"></script><!-- Datatable init js -->
+    <script src="{% static 'solkStatic/js/datatables.init.js' %}"></script><!-- App js -->
+{% endblock %}

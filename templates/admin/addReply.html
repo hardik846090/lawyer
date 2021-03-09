@@ -1,0 +1,107 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="float-right page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Drixo</a></li>
+                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                            <li class="breadcrumb-item active">Datatable</li>
+                        </ol>
+                    </div>
+                    {% if editReply %}
+                        <h5 class="page-title">Edit Reply</h5>
+                    {% else %}
+                        <h5 class="page-title">Add Reply</h5>
+                    {% endif %}
+                </div>
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <p class="text-muted font-14 m-b-20">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                            {% if editReply %}
+                                <form action="/admin/updatereply" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="text" value="{{ editReply.id }}" hidden name="id">
+
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Reply<span class="text-danger">*</span></label>
+                                        <input type="text" name="commentReply" parsley-trigger="change"
+                                               placeholder="Enter Comment Reply" class="form-control" id="emailAddress"
+                                               value="{{ editReply.commentReply }}">
+                                    </div>
+
+
+                                    <div class="form-group text-right m-b-0">
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                            Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            Cancel
+                                        </button>
+                                    </div>
+
+
+                                </form>
+
+                            {% else %}
+                                <form action="/admin/insertreply" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{ id }}" name="mediaCommentId">
+
+                                    <div class="form-group">
+                                        <label for="emailAddress">Reply<span class="text-danger">*</span></label>
+                                        <input type="text" name="commentReply" parsley-trigger="change"
+                                               placeholder="Enter Comment Reply" class="form-control" id="emailAddress"
+                                               {% if commentReply %}value="{{ commentReply }}"{% endif %}>
+                                    </div>
+
+
+                                    <div class="form-group text-right m-b-0">
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                            Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            Cancel
+                                        </button>
+                                    </div>
+
+                                </form>
+                            {% endif %}
+                            <br>
+
+                        </div>
+                    </div>
+                </div><!-- end col --></div><!-- end row --></div><!-- container fluid --></div>
+    <!-- Page content Wrapper -->
+
+
+    <script src="{% static 'solkStatic/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/dataTables.bootstrap4.min.js' %}"></script><!-- Buttons examples -->
+    <script src="{% static 'solkStatic/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/jszip.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/pdfmake.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/vfs_fonts.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/buttons.colVis.min.js' %}"></script><!-- Responsive examples -->
+    <script src="{% static 'solkStatic/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'solkStatic/js/responsive.bootstrap4.min.js' %}"></script><!-- Datatable init js -->
+    <script src="{% static 'solkStatic/js/datatables.init.js' %}"></script><!-- App js -->
+{% endblock %}
